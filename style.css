@@ -64,4 +64,30 @@ audio {
     padding: 0.5rem;
   }
 }
+.disco-ball {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at center, #fff 10%, #aaa 40%, #666 90%);
+  border-radius: 50%;
+  box-shadow:
+    0 0 15px #ff0044,
+    inset 0 0 10px #fff,
+    0 0 20px #aa0044;
+  animation: disco-spin 4s linear infinite;
+  background-image:
+    repeating-conic-gradient(
+      #ff0055 0deg 10deg,
+      #aa0022 10deg 20deg
+    );
+  filter: drop-shadow(0 0 5px #ff0044);
+  z-index: 9999;
+}
+
+@keyframes disco-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
