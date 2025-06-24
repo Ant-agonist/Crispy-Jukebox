@@ -1,0 +1,13 @@
+body {
+  font-family: sans-serif;
+  background-color: #f4f4f4;
+  padding: 2em;
+}
+
+h1 {
+  color: #2c3e50;
+}
+
+audio {
+  margin-bottom: 1.5em;
+}
