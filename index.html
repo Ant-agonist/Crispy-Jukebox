@@ -22,7 +22,16 @@
       color: #f8f3ff;
     }
 
-    h2 {
+    h2.section-title {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      text-align: center;
+      color: #dabfff;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding-bottom: 0.5rem;
+    }
+
+    h3 {
       font-size: 1.1rem;
       margin: 0 0 0.5rem;
       color: #e0caff;
@@ -76,54 +85,60 @@
 <body>
   <h1>Bienvenue sur ma page musicale</h1>
 
-  <div class="track-card">
-    <h2>Trop cool le dancefloor</h2>
-    <audio controls>
-      <source src="musique/In the Song Factory.mp3" type="audio/mp3">
-    </audio>
-  </div>
+  <h2 class="section-title">Chansons</h2>
+  <section>
+    <div class="track-card">
+      <h3>Trop cool le dancefloor</h3>
+      <audio controls>
+        <source src="musique/In the Song Factory.mp3" type="audio/mp3">
+      </audio>
+    </div>
 
-  <div class="track-card">
-    <h2>Instant émotion</h2>
-    <audio controls>
-      <source src="musique/Mi lafem yu.mp3" type="audio/mp3">
-    </audio>
-  </div>
+    <div class="track-card">
+      <h3>Instant émotion</h3>
+      <audio controls>
+        <source src="musique/Mi lafem yu.mp3" type="audio/mp3">
+      </audio>
+    </div>
 
-  <div class="track-card">
-    <h2>Boomers</h2>
-    <audio controls>
-      <source src="musique/NouvelleChanson.mp3" type="audio/mp3">
-    </audio>
-  </div>
+    <div class="track-card">
+      <h3>Boomers</h3>
+      <audio controls>
+        <source src="musique/NouvelleChanson.mp3" type="audio/mp3">
+      </audio>
+    </div>
 
-  <div class="track-card">
-    <h2>Le tube de la décennie</h2>
-    <audio controls>
-      <source src="musique/LeTubeDeLaDecennie.mp3" type="audio/mp3">
-    </audio>
-  </div>
+    <div class="track-card">
+      <h3>Le tube de la décennie</h3>
+      <audio controls>
+        <source src="musique/LeTubeDeLaDecennie.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </section>
 
-  <div class="track-card">
-    <h2>Tearful January</h2>
-    <audio controls>
-      <source src="musique/Sweet January.mp3" type="audio/mp3">
-    </audio>
-  </div>
+  <h2 class="section-title">Instrumentaux</h2>
+  <section>
+    <div class="track-card">
+      <h3>Tearful January</h3>
+      <audio controls>
+        <source src="musique/Sweet January.mp3" type="audio/mp3">
+      </audio>
+    </div>
 
-  <div class="track-card">
-    <h2>La marche eniablée des Fourmis</h2>
-    <audio controls>
-      <source src="musique/ambiance-retro.mp3" type="audio/mp3">
-    </audio>
-  </div>
+    <div class="track-card">
+      <h3>La marche eniablée des Fourmis</h3>
+      <audio controls>
+        <source src="musique/ambiance-retro.mp3" type="audio/mp3">
+      </audio>
+    </div>
 
-  <div class="track-card">
-    <h2>Garden grows in glass</h2>
-    <audio controls>
-      <source src="musique/No doubt.mp3" type="audio/mp3">
-    </audio>
-  </div>
+    <div class="track-card">
+      <h3>Garden grows in glass</h3>
+      <audio controls>
+        <source src="musique/No doubt.mp3" type="audio/mp3">
+      </audio>
+    </div>
+  </section>
 
   <div class="disco-ball"></div>
 </body>
