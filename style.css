@@ -1,71 +1,55 @@
+/* === GENERAL STYLES === */
 body {
-  background-color: #0a001a; /* plus sombre, légèrement bleuté */
+  background-color: #0a001a;
   color: #f0f0f0;
-  font-family: 'Press Start 2P', monospace;
+  font-family: 'Poppins', sans-serif;
   padding: 2rem;
   text-align: center;
   font-size: 14px;
   margin: 0;
-  /* Néon glow léger sur tout le texte */
-  text-shadow:
-    0 0 5px #ff00ff,
-    0 0 10px #ff00ff,
-    0 0 20px #ff00ff,
-    0 0 30px #ff33ff,
-    0 0 40px #ff33ff;
+  text-shadow: 0 0 8px #ff00ff;
 }
 
+h1 {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 2.5rem;
+  color: #ff00cc;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #ff33ff;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+h1:hover {
+  color: #ff66ff;
+  text-shadow: 0 0 20px #ffccff;
+  cursor: pointer;
+}
+
+/* === CONTAINER === */
 .container {
   max-width: 800px;
   margin: auto;
   border: 4px solid #ff00cc;
   padding: 2rem;
   background-color: #1c0033;
-  box-shadow:
-    0 0 30px #ff00cc88,
-    inset 0 0 15px #cc00aa99;
+  box-shadow: 0 0 30px #ff00cc88, inset 0 0 15px #cc00aa99;
   box-sizing: border-box;
   border-radius: 12px;
 }
 
-h1 {
-  color: #ff00cc;
-  margin-bottom: 2rem;
-  font-size: 2.5rem;
-  text-shadow:
-    0 0 10px #ff00cc,
-    0 0 20px #ff33dd,
-    0 0 30px #ff66ee,
-    0 0 40px #ff99ff;
-  transition: all 0.3s ease-in-out;
-}
-h1:hover {
-  text-shadow:
-    0 0 15px #ff33ff,
-    0 0 30px #ff66ff,
-    0 0 45px #ff99ff,
-    0 0 60px #ffccff,
-    0 0 75px #ffccff;
-  color: #ff66ff;
-  cursor: pointer;
-}
-
+/* === PLAYER SECTION === */
 .player {
   margin: 2rem 0;
   padding: 1rem;
   border: 2px dashed #aa00bb;
   background-color: #220044;
-  box-shadow:
-    inset 0 0 15px #dd33ff,
-    0 0 20px #cc00ff88;
-  box-sizing: border-box;
+  box-shadow: inset 0 0 15px #dd33ff, 0 0 20px #cc00ff88;
   border-radius: 8px;
   transition: box-shadow 0.3s ease-in-out;
 }
+
 .player:hover {
-  box-shadow:
-    inset 0 0 25px #ff66ff,
-    0 0 40px #ff00ffbb;
+  box-shadow: inset 0 0 25px #ff66ff, 0 0 40px #ff00ffbb;
 }
 
 audio {
@@ -73,12 +57,66 @@ audio {
   filter: hue-rotate(320deg) brightness(110%) contrast(120%);
   outline: none;
   border-radius: 5px;
-  box-shadow:
-    0 0 10px #ff00ffaa,
-    inset 0 0 15px #ff66ffcc;
+  box-shadow: 0 0 10px #ff00ffaa, inset 0 0 15px #ff66ffcc;
+  margin-top: 0.5rem;
 }
 
-/* Responsive styles */
+/* === TOGGLE BUTTONS === */
+.toggle-buttons {
+  margin-bottom: 2rem;
+}
+
+.toggle-btn {
+  background-color: #5a1ea1;
+  border: none;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  margin: 0 0.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.toggle-btn:hover {
+  background-color: #7435c7;
+  transform: scale(1.05);
+}
+
+.toggle-btn.active {
+  background-color: #a675ff;
+}
+
+/* === DISCO BALL === */
+.disco-ball {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 90px;
+  height: 90px;
+  background: repeating-conic-gradient(from 0deg, #ff00cc 0deg 10deg, #660066 10deg 20deg);
+  border-radius: 50%;
+  box-shadow: 0 0 15px #ff33ff, inset 0 0 25px #ff99ff, 0 0 40px #ff66ff, 0 0 60px #ff33ff;
+  animation: spin 5s linear infinite, pulse 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px #ff00ff);
+  z-index: 10000;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px #ff33ff, inset 0 0 25px #ff99ff, 0 0 40px #ff66ff, 0 0 60px #ff33ff;
+  }
+  50% {
+    box-shadow: 0 0 30px #ff99ff, inset 0 0 40px #ffccff, 0 0 60px #ff99ff, 0 0 90px #ff66ff;
+  }
+}
+
+/* === RESPONSIVE DESIGN === */
 @media screen and (max-width: 600px) {
   body {
     padding: 1rem;
@@ -94,121 +132,17 @@ audio {
     font-size: 1.5rem;
   }
 
-  h2 {
-    font-size: 14px;
-  }
-
   .player {
     margin: 1rem 0;
     padding: 0.5rem;
   }
-}
 
-/* --- Boule disco animée néon --- */
-.disco-ball {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  width: 90px;
-  height: 90px;
-  background:
-    repeating-conic-gradient(
-      from 0deg,
-      #ff00cc 0deg 10deg,
-      #660066 10deg 20deg
-    );
-  border-radius: 50%;
-  box-shadow:
-    0 0 15px #ff33ff,
-    inset 0 0 25px #ff99ff,
-    0 0 40px #ff66ff,
-    0 0 60px #ff33ff;
-  animation: spin 5s linear infinite, pulse 2.5s ease-in-out infinite;
-  filter: drop-shadow(0 0 12px #ff00ff);
-  z-index: 10000;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg);}
-  100% { transform: rotate(360deg);}
-}
-
-@keyframes pulse {
-  0%, 100% {
-    box-shadow:
-      0 0 15px #ff33ff,
-      inset 0 0 25px #ff99ff,
-      0 0 40px #ff66ff,
-      0 0 60px #ff33ff;
+  .toggle-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
   }
-  50% {
-    box-shadow:
-      0 0 30px #ff99ff,
-      inset 0 0 40px #ffccff,
-      0 0 60px #ff99ff,
-      0 0 90px #ff66ff;
-    /* Style général du body avec fond sombre et typo néon */
-body {
-  background-color: #0d0d0d;
-  color: #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  padding: 2rem;
 }
 
-/* Titres avec effet néon */
-h1, h2 {
-  color: #ff00ff;
-  text-shadow:
-    0 0 5px #ff00ff,
-    0 0 10px #ff00ff,
-    0 0 20px #ff00ff,
-    0 0 40px #ff00ff,
-    0 0 80px #ff00ff;
-  font-weight: 900;
-  margin-bottom: 1rem;
-}
-
-/* Audio controls un peu customisés */
-audio {
-  outline: none;
-  margin-bottom: 2rem;
-  filter: drop-shadow(0 0 5px #00ffff);
-}
-
-/* Disco ball avec animation néon pulsant */
-.disco-ball {
-  margin: 3rem auto;
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle at center,
-              #00ffff 10%,
-              #000000 70%);
-  border-radius: 50%;
-  box-shadow:
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 30px #00ffff,
-    inset 0 0 15px #00ffff;
-  animation: neonPulse 2s infinite alternate ease-in-out;
-}
-
-/* Animation pulsante */
-@keyframes neonPulse {
-  0% {
-    box-shadow:
-      0 0 10px #00ffff,
-      0 0 20px #00ffff,
-      0 0 30px #00ffff,
-      inset 0 0 15px #00ffff;
-  }
-  100% {
-    box-shadow:
-      0 0 20px #00ffff,
-      0 0 40px #00ffff,
-      0 0 60px #00ffff,
-      inset 0 0 30px #00ffff;
-  }
 }
 
   }
